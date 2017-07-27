@@ -1,10 +1,10 @@
 # Disjoint-Set
 
 + [API](#api)
-  + [union] (#unionnode_a-node_b)
-  + [find] (#findnode)
-  + [connected] (#connectednode_a-node_b)
-  + [count] (#count)
+  + [union](#unionnode_a-node_b)
+  + [find](#findnode)
+  + [connected](#connectednode_a-node_b)
+  + [count](#count)
 + [Implementations](#implementations)
   + [Quick-Find](#quick-find)
   + [Quick-Union](#quick-union)
