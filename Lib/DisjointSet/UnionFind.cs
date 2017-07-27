@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace DataStructures.DisjointSet
 {   
-    abstract public class UnionFind
+    abstract public class UnionFind : IUnionFind
     {
         public int[] Nodes { get; private set; } 
         public int[] Components { get; private set; }
