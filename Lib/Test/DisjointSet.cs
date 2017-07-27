@@ -71,7 +71,7 @@ namespace DataStructures.Test
         }
 
         [Fact]
-        void Union_And_Find()
+        void UnionAndFind()
         {
             int[][] components = {
                 new int[]{0},
@@ -80,7 +80,7 @@ namespace DataStructures.Test
                 new int[]{4,5,8},
                 new int[]{6,2}
             };
-
+            
             PrepareImplementationsForTest((implementation) => {
                 int parentNode;
                 foreach(int[] component in components)
@@ -108,6 +108,35 @@ namespace DataStructures.Test
                         }
                     }
                 }
+            });
+        }
+
+        [Fact]
+        void FindThrowsBoundsException()
+        {
+            TestImplementations((implementation) => {
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.Find(-1));
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.Find(numberOfNodes));
+            });
+        }
+
+        [Fact]
+        void UnionThrowsBoundsException()
+        {
+            TestImplementations((implementation) => {
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.Union(-1, 8));
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.Union(0, numberOfNodes));
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.Union(-1, numberOfNodes));   
+            });
+        }
+
+        [Fact]
+        void IsConnectedThrowsBoundsException()
+        {
+            TestImplementations((implementation) => {
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.IsConnected(-1, 8));
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.IsConnected(0, numberOfNodes));
+                Assert.Throws<System.ArgumentOutOfRangeException>(() => implementation.IsConnected(-1, numberOfNodes));   
             });
         }
     }

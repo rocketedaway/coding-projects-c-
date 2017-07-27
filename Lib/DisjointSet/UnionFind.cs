@@ -60,7 +60,7 @@ namespace DataStructures.DisjointSet
             bool nodeIsInBounds = node >= 0 && node < NumberOfNodes;
             if (!nodeIsInBounds)
             {
-                throw new System.ArgumentException("The supplied node (" + node + ") is out of rage", "node");
+                throw new System.ArgumentOutOfRangeException("The supplied node (" + node + ") is out of rage", "node");
             }
         }
     }

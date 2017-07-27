@@ -1,10 +1,9 @@
 # Disjoint-Set
 
 + [API](#api)
-  + [union](#unionnode_a-node_b)
-  + [find](#findnode)
-  + [connected](#connectednode_a-node_b)
-  + [count](#count)
+  + [Union](#unionnode_a-node_b)
+  + [Find](#findnode)
+  + [IsConnected](#isconnectednode_a-node_b)
 + [Implementations](#implementations)
   + [Quick-Find](#quick-find)
   + [Quick-Union](#quick-union)
@@ -14,28 +13,24 @@
 
 ### API
 
-### union(node_a, node_b)
+### Union(node_a, node_b)
 Add connection between node_a and all other nodes in the same component to the component of node_b
   + `node_a (int)` A node in the data strucutre
   + `node_b (int)` Another node in the data strucutre
-  + `throws (UnionFindBoundsException)` Exception is thrown when any argument `a` is `0 > a >= N`
+  + `throws (System.ArgumentOutOfRangeException)` Exception is thrown when any argument `a` is `0 > a >= N`
 
-### find(node)
+### Find(node)
 Find the component identifier which contains the specified node
   + `node (int)` A node in the data strucutre
   + `returns (int)` A component identifier
-  + `throws (UnionFindBoundsException)` Exception is thrown when any argument `a` is `0 > a >= N`
+  + `throws (System.ArgumentOutOfRangeException)` Exception is thrown when any argument `a` is `0 > a >= N`
 
-### connected(node_a, node_b)
+### IsConnected(node_a, node_b)
 Check if a connection between node_a and and node_b exists
   + `node_a (int)` A node in the data strucutre
   + `node_b (int)` Another node in the data strucutre
   + `returns (bool)` *True* if a connection exists and *False* otherwise
-  + `throws (UnionFindBoundsException)` Exception is thrown when any argument `a` is `0 > a >= N`
-
-### count()
-Query how many distinct components there are in the data structure
-  + `returns (int)` The number of distinct components
+  + `throws (System.ArgumentOutOfRangeException)` Exception is thrown when any argument `a` is `0 > a >= N`
 
 ## Implementations
 
