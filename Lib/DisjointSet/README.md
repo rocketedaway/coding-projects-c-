@@ -1,4 +1,4 @@
-# Union-Find (Disjoint-Set)
+# Disjoint-Set
 
 + [API](#api)
   + [union] (#unionnode_a-node_b)

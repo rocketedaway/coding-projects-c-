@@ -1,16 +1,26 @@
 using System;
+using System.Linq;
 
-namespace DataStructures.UnionFind
+namespace DataStructures.DisjointSet
 {   
-    abstract public class BaseClass
+    abstract public class UnionFind
     {
+        public int[] Nodes { get; private set; } 
         public int[] Components { get; private set; }
-        public int NumberOfNodes { get; private set; }
+
+        public int NumberOfNodes
+        {
+            get 
+            {
+                return Nodes.Length;
+            }
+        }
 
         public int NumberOfComponents 
         {
             get 
             {
+                // @TODO: Currently this is O(n) so it can be improved if nessisary
                 int numberOfComponents = 0;
                 for (int i = 0; i < Components.Length; i++)
                 {
@@ -24,10 +34,9 @@ namespace DataStructures.UnionFind
             }
         }
 
-        protected BaseClass(int numberOfNodes) 
-        {
-            NumberOfNodes =  numberOfNodes;
-            Components = new int[numberOfNodes];
+        protected UnionFind(int numberOfNodes) {
+            Nodes = Enumerable.Range(0, numberOfNodes).ToArray();
+            Components = Enumerable.Range(0, numberOfNodes).ToArray();
         }
 
         public bool IsConnected(int nodeA, int nodeB)
