@@ -12,7 +12,10 @@ namespace DataStructures.Test
         public DisjointSet()
         {
             implementations = new UnionFind[] {
-                new QuickFind(numberOfNodes)
+                new QuickFind(numberOfNodes),
+                new QuickUnion(numberOfNodes),
+                new QuickUnionWeighted(numberOfNodes),
+                new QuickUnionWeightedWithPathCompression(numberOfNodes)
             };
         }
 
